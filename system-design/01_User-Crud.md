@@ -205,3 +205,9 @@ func deleteUser(w http.ResponseWriter, r *http.Request, id int) {
 	delete(users, id)
 	w.WriteHeader(http.StatusNoContent)
 }
+
+
+## How to Run
+
+go mod init user-crud-api
+go run main.go
