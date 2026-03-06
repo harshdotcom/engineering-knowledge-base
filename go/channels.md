@@ -13,6 +13,8 @@ Instead of sharing memory directly, channels promote **communication through dat
 ## 🎯 Purpose of Channels
 
 Channels are mainly used to:
+3
+
 
 - Transfer data between concurrent tasks  
 - Synchronize execution  
