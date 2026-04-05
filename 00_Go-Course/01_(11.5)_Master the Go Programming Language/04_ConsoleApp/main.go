@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"strconv"
 
 	"github.com/eiannone/keyboard"
 )
@@ -11,7 +12,12 @@ func main() {
 	// reader := bufio.NewReader(os.Stdin)
 	// fmt.Println("Write the name, reader")
 	// userInput, _ := reader.ReadString('\n')
+	// userInput = strings.Replace(userInput, "\n", "", -1)
 	// fmt.Println(userInput)
+
+	coffees := make(map[int]string)
+	coffees[1] = "Cappuchino"
+	coffees[2] = "Latte"
 
 	err := keyboard.Open()
 	if err != nil {
@@ -22,21 +28,26 @@ func main() {
 		_ = keyboard.Close()
 	}()
 
+	fmt.Println("MENU")
+	fmt.Println("_______")
+	fmt.Println("1-Cappuchino")
+	fmt.Println("2-Latte")
+	fmt.Println("Q-quit the program")
+
 	fmt.Println("Press Any Key on the keyboard. Press ESC to quit")
 
 	for {
-		char, key, err := keyboard.GetSingleKey()
+		char, _, err := keyboard.GetSingleKey()
 		if err != nil {
 			log.Fatal(err)
 		}
 
-		if key != 0 {
-			fmt.Println("You Pressed", char, key)
-		} else {
-			fmt.Println("You Pressed", char, key)
-		}
+		i, _ := strconv.Atoi(string(char))
+		t := fmt.Sprintf("You choose a %s", coffees[i])
 
-		if key == keyboard.KeyEsc {
+		fmt.Println(t)
+
+		if char == 'q' || char == 'Q' {
 			break
 		}
 
