@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 // basic type (number, strings, boolens)
@@ -23,6 +22,16 @@ type Car struct {
 }
 
 // Refrence Type : Pointer, Slices, Maps, Functions, channels
+
+type Animals struct {
+	Name         string
+	Sound        string
+	NumberOfLegs int
+}
+
+func (a *Animals) Says() {
+	fmt.Printf("A %s says %s", a.Name, a.Sound)
+}
 
 // Pointer is nothing more it just point to specific memory or location
 
@@ -57,25 +66,69 @@ func main() {
 
 	// It help us to change the value of variable withour even passing it
 
-	var animals []string
-	animals = append(animals, "dog")
-	animals = append(animals, "fish")
-	animals = append(animals, "cat")
-	animals = append(animals, "horse")
+	// var animals []string
+	// animals = append(animals, "dog")
+	// animals = append(animals, "fish")
+	// animals = append(animals, "cat")
+	// animals = append(animals, "horse")
 
-	fmt.Println(animals)
+	// fmt.Println(animals)
 
-	for _, x := range animals {
-		fmt.Println("Animals Name", x)
+	// for _, x := range animals {
+	// 	fmt.Println("Animals Name", x)
+	// }
+
+	// fmt.Println("First tow element of the array is", animals[0:2])
+	// fmt.Println("Size of slice", len(animals))
+
+	// sort.Strings(animals)
+
+	// fmt.Println(animals)
+
+	// ____________________________ Maps _____________________________________
+
+	// intMap := make(map[string]int)
+
+	// intMap["one"] = 1
+	// intMap["two"] = 2
+	// intMap["three"] = 3
+
+	// for key, value := range intMap {
+	// 	fmt.Println(key, value)
+	// }
+
+	// delete(intMap, "one")
+
+	// fmt.Println(intMap)
+
+	// el, ok := intMap["one"]
+	// if ok {
+	// 	fmt.Println(el, "is in map")
+	// } else {
+	// 	fmt.Println(el, "is not in map")
+	// }
+
+	// ________________________ Func ________________________________
+
+	// myTotal := sumMany(2, 3, 4, 5, 5, 6, 7)
+	// fmt.Println(myTotal)
+
+	// var dog Animals
+	// dog.Name = "dog"
+	// dog.Sound = "woof"
+	// dog.Says()
+
+	// _____________________  Channels _________________________
+
+}
+
+// Variatic function
+func sumMany(nums ...int) int {
+	total := 0
+	for _, x := range nums {
+		total += x
 	}
-
-	fmt.Println("First tow element of the array is", animals[0:2])
-	fmt.Println("Size of slice", len(animals))
-
-	sort.Strings(animals)
-
-	fmt.Println(animals)
-
+	return total
 }
 
 // func DeleteFromSlice()
