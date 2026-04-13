@@ -32,3 +32,20 @@
 - They can talk to each other
 - This is Go' philosopy of having things share memory by communicating, rather than communicating by sharing memory.
 - The producer/consumer problem
+
+
+##### Channels
+
+- A means of allowing communication to and from a GoRoutine
+- Channels can we buffered or unbuffered
+- Once you are done with a channel, you must close it
+- Channels typically only accept a given type of interface
+
+#### The Sleeping Barber
+
+- A barber goes to work in a barbershop with a waiting room with a fixed number of seats
+- If no one in the waiting room, the barber goes for sleep
+- when a client shows up, if there is no  seats available, he or she has to leaves
+- If there is a seat available, and the barber is sleeping the client wakes the barber up and get the hair cut
+- If the barber is busy, the client takes a seat and waits his or her turn.
+- Once the shop closes, no more clients are allowed in, but the barber has to say until everyone who is waiting gets a hair cut
