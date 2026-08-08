@@ -37,16 +37,20 @@ print(customer["age"])
 
 # print(output)
 
+def emoji_converter(message):
+    word = message.split(' ')
+    emojis = {
+        ":)":"😊",
+        "()": "❤️ "
+    }
+
+    output = ""
+    for wordFind in word:
+        output += emojis.get(wordFind, wordFind) + " "
+
+    # print(output)
+
 
 message = input(">")
-word = message.split(' ')
-emojis = {
-    ":)":"😊",
-    "()": "❤️"
-}
 
-output = ""
-for wordFind in word:
-    output += emojis.get(wordFind, wordFind) + " "
 
-print(output)
